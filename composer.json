@@ -1,0 +1,15 @@
+{
+    "name": "cygnet/cache",
+    "autoload": {
+        "psr-4": {
+            "Cygnet\\Cache\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anuj Jaha",
+            "email": "anuj.jaha@cygnetinfotech.com"
+        }
+    ],
+    "require": {}
+}
