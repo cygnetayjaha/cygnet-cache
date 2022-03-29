@@ -2,6 +2,12 @@
 
 namespace Cygnet\Cache;
 
+/*
+ * Class CygnetCache
+ *
+ * @author Anuj Jaha ( anuj.jaha@cygnetinfotech.com )
+ */
+
 class CygnetCache
 {
     /**
@@ -77,11 +83,26 @@ class CygnetCache
      * @param array $result
      * @return array
      */
-    public function set($keys = [], $duration = 60, $result = [])
+    public function set($result = [], $duration = 60)
     {
-        \Cache::put($this->generateKey($keys), $result, $duration);
+        \Cache::put($this->cacheKey, $result, $duration);
 
         return $result;
+    }
+
+    /**
+     * Clear
+     * 
+     * @param array $keys
+     * @param int $duration
+     * @param array $result
+     * @return array
+     */
+    public function clear()
+    {
+        \Cache::forget($this->cacheKey);
+
+        return $this;
     }
 
     /**
